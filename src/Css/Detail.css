@@ -1,0 +1,14 @@
+.gameList {
+    color: rgb(158, 158, 163);
+}
+
+.btn {
+    background-color: #33462a;
+    color: #71c016;
+    max-width: 500px;
+}
+
+.btn:hover {
+    background-color: #71c016 !important;
+    color: white !important;
+}

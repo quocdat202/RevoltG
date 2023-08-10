@@ -1,0 +1,88 @@
+/* .slick-dots {
+    width: 1210px;
+} */
+
+.gameList {
+    padding: 50px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.games {
+    width: 50px;
+}
+
+.slick-dots{
+    width: 100%;
+}
+
+.ant-card-bordered {
+    border: 1px solid #282a3f;
+}
+
+.ant-card {
+    background-color: #252730;
+    /* color: #9e9ea3; */
+}
+
+.ant-card-meta-title {
+    color: #d4d4d4 !important;
+  }
+
+.ant-card-actions {
+    border-radius: 10px !important;
+    background-color: #46484c !important;
+    border-top: 0 !important;
+}
+
+.Footer {
+    color: rgb(158, 158, 163);
+    padding-bottom: 30px;
+  }
+
+.ant-empty-description {
+    color: gray !important;
+}
+
+.statistic {
+    width: 70%;
+    color: gray !important;
+    background-color: #252730;
+    padding: 4px;
+    border-radius: 10px;
+}
+
+.ant-statistic-content {
+    color: #b1b1b5 !important;
+}
+
+.ant-statistic-title {
+    font-size: 20px !important;
+    color: #7e8188 !important;
+}
+
+/* .anticon {
+    padding: 5px;
+    background-color: #191b20;
+    border-radius: 10px;
+} */
+
+
+.pagination-content {
+    color: aliceblue;
+}
+.pagination-content a, .pagination-content svg{
+    color: white !important;
+}
+.pagination-content .ant-pagination-item-active a{
+    color: black !important;
+}
+.btn-totop .anticon svg{
+    color: black !important;
+}
+.ant-pagination-item-ellipsis{
+    color: white !important;
+}
