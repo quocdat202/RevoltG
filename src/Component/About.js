@@ -59,7 +59,7 @@ const About = () => {
                 size={size}
                 iconSize={size / 4}
                 // value='http://localhost:3000'
-                value="https://free-game.vercel.app/"
+                value="https://revolt-g.vercel.app/"
             // icon="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
             />
         </div>
