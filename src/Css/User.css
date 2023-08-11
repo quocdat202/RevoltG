@@ -44,15 +44,15 @@ body {
 }
 
 .img-avatar img{
-  width: 130px;
-  height: 130px;
+  width: 100px;
+  height: 100px;
   position: absolute;
   border-radius: 50%;
   border: 6px solid white;
   /* background-image: linear-gradient(-60deg, #16a085 0%, #f4d03f 100%); */
   background-color: #5d5d5d;
   top: 15px;
-  left: 52px;
+  left: 75px;
 }
 
 .card-text {
@@ -92,3 +92,4 @@ body {
     transform: rotate(22deg)
   }
 }
+

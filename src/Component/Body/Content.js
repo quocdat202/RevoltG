@@ -184,37 +184,39 @@ function Content({ user, notification, addToCart }) {
                             return (
                                 <Card
                                     hoverable
+                                    className='btn-add-cart'
                                     style={{
                                         width: 320,
-                                        height: 289,
+                                        height: 405,
                                         paddingBottom: 10,
-                                        marginBottom: 30,
-                                        marginRight: 20,
-                                        color: "#9e9ea3",
+                                        marginBottom: 20,
+                                        marginRight: 20
                                     }}
                                     cover={
                                         <img alt={item?.thumbnail} src={item?.thumbnail} onClick={() => history.push(`/game/${item?.id}`)} />
                                     }
                                     actions={[
                                         <span style={{ fontWeight: '500', color: 'white' }}>Price: {(item?.id * 23).toLocaleString()}$</span>,
-                                        <Button style={{ backgroundColor: 'transparent', width: 'auto', color: 'white' }} onClick={() => addToCart(item)} >Add to cart</Button>
+                                        <button style={{ width: 'auto', color: 'white' }} onClick={() => addToCart(item)} >Add to cart</button>
                                     ]}
                                 >
                                     <div >
-                                        <Meta style={{ color: '#b1b1b5' }} onClick={() => history.push(`/game/${item?.id}`)}
+                                        <Meta style={{ color: '#b1b1b5', fontWeight: 'bold', fontSize: 20 }} onClick={() => history.push(`/game/${item?.id}`)}
                                             title={item?.title}
                                         />
-                                        {/* <div className="card-description"
+                                        <div className="card-description"
                                             style={{
+                                                paddingTop: 20,
                                                 height: '70px',
                                                 overflow: 'hidden',
                                                 textOverflow: 'ellipsis',
                                                 display: '-webkit-box',
                                                 WebkitLineClamp: 3,
-                                                WebkitBoxOrient: 'vertical'
+                                                WebkitBoxOrient: 'vertical',
+                                                color: 'white'
                                             }}>
                                             {item?.short_description}
-                                        </div> */}
+                                        </div>
                                     </div>
                                 </Card>
                             )

@@ -47,17 +47,18 @@ function Cart({ user }) {
     }, [])
 
     return (
-        <div style={{ minHeight: screenHeight }}>
+        <div className='cart-container' style={{ minHeight: screenHeight }}>
             {
                 dataCart?.length > 0 ? <div style={{ display: 'flex', flexDirection: 'column' }}>
                     <div style={{ width: '100%', display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
-                        <h1 style={{ color: 'white' }}>Your cart</h1>
                         <div>
-                            <h2 style={{ color: 'white' }}>Total money:&nbsp;{totalMoney().toLocaleString()}$</h2>
+                            <h1 style={{ color: 'white' }}>Your cart</h1>
+                            <Button style={{ backgroundColor: '#B8860B', width: '100px', color: 'white' }} >Rent a game</Button>
                         </div>
-                    </div>
-                    <div>
-                        <Button style={{ backgroundColor: 'transparent', width: 'auto', color: 'white' }} >Add to cart</Button>
+                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
+                            <h3 style={{ color: 'white' }}>Total money:&nbsp;</h3>
+                            <h3 style={{ color: 'white' }}>{totalMoney().toLocaleString()}$</h3>
+                        </div>
                     </div>
                 </div> : ''
             }
@@ -72,11 +73,10 @@ function Cart({ user }) {
                                 onClick={() => history.push(`/game/${item?.id}`)}
                                 style={{
                                     width: 320,
-                                    height: 289,
+                                    height: 390,
                                     paddingBottom: 10,
                                     marginBottom: 20,
-                                    marginRight: 20,
-                                    color: "#9e9ea3",
+                                    marginRight: 20
                                 }}
                                 cover={
                                     <img alt={item?.thumbnail} src={item?.thumbnail} />
@@ -86,20 +86,22 @@ function Cart({ user }) {
                                 ]}
                             >
                                 <div >
-                                    <Meta
+                                    <Meta style={{ color: '#b1b1b5', fontWeight: 'bold', fontSize: 20 }} onClick={() => history.push(`/game/${item?.id}`)}
                                         title={item?.title}
                                     />
-                                    {/* <div className="card-description"
-                                            style={{
-                                                height: '70px',
-                                                overflow: 'hidden',
-                                                textOverflow: 'ellipsis',
-                                                display: '-webkit-box',
-                                                WebkitLineClamp: 3,
-                                                WebkitBoxOrient: 'vertical'
-                                            }}>
-                                            {item?.short_description}
-                                        </div> */}
+                                    <div className="card-description"
+                                        style={{
+                                            paddingTop: 20,
+                                            height: '70px',
+                                            overflow: 'hidden',
+                                            textOverflow: 'ellipsis',
+                                            display: '-webkit-box',
+                                            WebkitLineClamp: 3,
+                                            WebkitBoxOrient: 'vertical',
+                                            color: 'white'
+                                        }}>
+                                        {item?.short_description}
+                                    </div>
                                 </div>
                             </Card>
                         )

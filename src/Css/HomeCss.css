@@ -26,3 +26,14 @@ ul {
     color: red;
   }
 
+  .about-container{
+  background-image: url(../images/bgQR.png);
+  background-repeat: none;
+  background-size: cover;
+  }
+
+  .cart-container{
+    background-image: url(../images/gameCart.png);
+    background-repeat: none;
+    background-size: cover;
+  }

@@ -38,7 +38,7 @@ const About = () => {
     }, []);
 
     return (
-        <div style={{ height: screenHeight - 146, display: 'flex', flexDirection: 'column', padding: 50, margin: 'auto', alignItems: 'center' }}>
+        <div className='about-container' style={{ height: screenHeight - 146, display: 'flex', flexDirection: 'column', padding: 50, margin: 'auto', alignItems: 'center' }}>
             <div
                 style={{
                     marginBottom: 16,
@@ -59,7 +59,7 @@ const About = () => {
                 size={size}
                 iconSize={size / 4}
                 // value='http://localhost:3000'
-                value="https://revolt-g.vercel.app/"
+                value="https://free-game.vercel.app/"
             // icon="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
             />
         </div>
