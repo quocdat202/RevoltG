@@ -6,8 +6,9 @@ import { Button, Space } from 'antd';
 import { PlaySquareOutlined } from '@ant-design/icons';
 import { Empty } from 'antd';
 import emptyCart from "../../images/emptyCart.png"
+import Swal from 'sweetalert2'
 
-function Cart({ user }) {
+function Cart({ user, notification }) {
     const history = useHistory();
 
     const [dataCart, setDataCart] = useState([])
@@ -24,6 +25,44 @@ function Cart({ user }) {
         }
         return totalMoney
     }
+    const confirmNotification = (e, id) => {
+        e.preventDefault()
+        return Swal.fire({
+            title: 'Are you sure?',
+            text: "Are you sure you want to remove from cart?",
+            icon: 'warning',
+            width: '32em',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                subtractionCart(id);
+            }
+        })
+    }
+
+
+    const subtractionCart = (itemId) => {
+        const inCart = localStorage.getItem(`carts${user?.uid}`);
+        if (user?.uid) {
+            if (inCart) {
+                let isCart = JSON.parse(inCart);
+                let find = false;
+                const newData = isCart.filter(item => item?.id !== itemId);
+                setDataCart(newData)
+                localStorage.setItem(`carts${user?.uid}`, JSON.stringify(newData));
+            } else {
+                // localStorage.setItem(`carts${user?.uid}`, JSON.stringify([cart]));
+                return notification('error', '!')
+            }
+        } else {
+            return notification('error', '!')
+        }
+
+    }
+
 
 
     useEffect(() => {
@@ -70,7 +109,7 @@ function Cart({ user }) {
                         return (
                             <Card
                                 hoverable
-                                onClick={() => history.push(`/game/${item?.id}`)}
+                                // onClick={() => history.push(`/game/${item?.id}`)}
                                 style={{
                                     width: 320,
                                     height: 390,
@@ -83,6 +122,7 @@ function Cart({ user }) {
                                 }
                                 actions={[
                                     <span style={{ fontWeight: '500', color: 'white' }}>Price: {(item?.id * 23).toLocaleString()}$</span>,
+                                    <Button style={{ backgroundColor: '#CD0000', width: '100px', color: 'white' }} onClick={(e) => confirmNotification(e, item?.id)} >Remove</Button>
                                 ]}
                             >
                                 <div >
